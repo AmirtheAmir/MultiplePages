@@ -1,0 +1,32 @@
+{
+  "user": [
+    {
+      "name": "amir",
+      "lastname": "nasseri",
+      "id": "rogers",
+      "email": "something",
+      "password": "amirnassseri"
+    },
+    {
+      "name": "amir",
+      "lastname": "amir",
+      "id": "amir",
+      "email": "amir",
+      "password": "amir"
+    },
+    {
+      "name": "amir",
+      "lastname": "najafi",
+      "id": "amnam",
+      "email": "amirreza",
+      "password": "mamad"
+    },
+    {
+      "name": "amir",
+      "lastname": "najafi",
+      "id": "amirnajfi",
+      "email": "amirakhgl",
+      "password": "amirmamad"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+.weatherCont {
+  display: flex;
+  width: 33%;
+  background-color: beige;
+  height: 90%;
+  flex-direction: column;
+  margin: 13px;
+  border-radius: 24px;
+  align-items: center;
+}
+
+.weatherTitle {
+  margin-top: 50px;
+  font-size: 55px;
+}
+
+.resultCont {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBox {
+  width: 90%;
+  margin-bottom: 50px;
+}
+.searchBox input {
+  width: 70%;
+  font-size: 15px;
+  padding: 9px 15px;
+  border-radius: 15px;
+  outline: none;
+  background-color: #333333;
+  border: none;
+  color: beige;
+  font-weight: 600;
+  height: 35px;
+}
+.searchBox button {
+  width: 130px;
+  background-color: rgb(54, 204, 99);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 35px;
+  margin-left: 9px;
+  font-weight: 600;
+  font-size: 15px;
+  border: #333333 solid 1px;
+  cursor: pointer;
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  font-size: 30px;
+  height: 20%;
+  margin: 20px 0 0 20px;
+}
+.weatherText {
+  color: #333333;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: row;
+}

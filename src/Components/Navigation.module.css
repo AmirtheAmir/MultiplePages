@@ -1,0 +1,62 @@
+.navbarCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px 8px 30px;
+  border-bottom: 1px solid #333333;
+  padding: 0 0 20px 0;
+}
+
+.leftPart {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leftPart ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+.leftPart li {
+  margin: 0 20px;
+}
+.leftPart a {
+  text-decoration: none;
+  color: rgb(221, 221, 221);
+}
+
+.premuimText {
+  color: rgb(24, 24, 24);
+  background-color: rgb(54, 204, 99);
+  border-radius: 24px;
+  padding: 1px 16px;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.rightPart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightPart button {
+  background-color: rgb(24, 24, 24);
+  border: none;
+  color: rgb(221, 221, 221);
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.navbarLogo {
+  height: 15px;
+  width: 15px;
+  color: rgb(221, 221, 221);
+  margin: 0 5px 1.5px 0;
+}

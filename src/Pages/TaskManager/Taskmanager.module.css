@@ -1,0 +1,14 @@
+.parent{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child{
+  text-align: center;
+  font-size: 24px;
+  color: #666464;
+  font-weight: bolder;
+}

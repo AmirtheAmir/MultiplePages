@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavStyle from "./Navigation.module.css";
+import NavStyle from "./Navbar.module.css";
 function Navbar() {
   return (
     <div className={NavStyle.navbarCont}>

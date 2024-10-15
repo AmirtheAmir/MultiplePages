@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
-import {Login, TaskManager, Accprem, Homepage} from "./Pages"
+import { Login, TaskManager, Accprem, Homepage } from "./Pages";
 import { Route, Routes } from "react-router-dom";
-import { ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
         <Route path="/accprem" element={<Accprem />} />
         <Route path="/taskmanager" element={<TaskManager />} />
         <Route path="/homepage" element={<Homepage />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </div>
   );

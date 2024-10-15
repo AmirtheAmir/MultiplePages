@@ -14,6 +14,8 @@ function Login() {
     if (validate()) {
       fetch("http://localhost:8000/user/" + name)
         .then((res) => {
+          res.json();
+          // TODO: handle passowrd check here
           return res.json();
         })
         .then((res) => {

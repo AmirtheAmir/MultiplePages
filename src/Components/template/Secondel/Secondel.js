@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios, { isCancel, AxiosError } from "axios";
-import SecondStyle from './Secondel.module.css'
+import SecondStyle from "./Secondel.module.css";
 function Secondel() {
+  // TODO: change name and use better name for currentText
   const [currentText, setCurrentText] = useState("?");
   const [times, setTimes] = useState({});
 
@@ -9,9 +10,9 @@ function Secondel() {
     axios
       .get("https://api.adviceslip.com/advice")
       .then((res) => {
-        const answer = res.data.slip;
-        console.log(answer.advice);
-        setCurrentText(answer.advice);
+        const answer = res.data.slip.advice;
+        console.log(answer);
+        setCurrentText(answer);
       })
       .catch((err) => {
         console.log(err);
@@ -49,7 +50,7 @@ function Secondel() {
   return (
     <div className={SecondStyle.mainCont}>
       <div className={SecondStyle.searchBox}>
-        <button  className={SecondStyle.searchBtn} onClick={getQuote}>
+        <button className={SecondStyle.searchBtn} onClick={getQuote}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -61,7 +62,7 @@ function Secondel() {
           Test Your Luck Today
         </button>
       </div>
-      <div  className={SecondStyle.textBox}>
+      <div className={SecondStyle.textBox}>
         <span>{currentText}</span>
       </div>
       <div className={SecondStyle.clocks}>

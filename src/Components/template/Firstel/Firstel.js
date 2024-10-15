@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import FirstStyle from "./Firstel.module.css";
 
 function Firstel() {
+  const nameRef = React.createRef();
   const [name, changeName] = useState("");
   const [lastname, changeLastname] = useState("");
   const [id, changeId] = useState("");
@@ -16,18 +17,22 @@ function Firstel() {
   const isValidate = () => {
     let isProceed = true;
     let errorMsg = "Please Fill The ";
-    if (id === null || id === "") {
+    if (password.length < 8) {
       isProceed = false;
-      errorMsg += " Id";
+      errorMsg = "Password must be at least 8 characters";
     }
-    if (email === null || email === "") {
-      isProceed = false;
-      errorMsg += " Email";
-    }
-    if (password === null || password === "") {
-      isProceed = false;
-      errorMsg += " Password";
-    }
+    // if (id === null || id === "") {
+    //   isProceed = false;
+    //   errorMsg += " Id";
+    // }
+    // if (email === null || email === "") {
+    //   isProceed = false;
+    //   errorMsg += " Email";
+    // }
+    // if (password === null || password === "") {
+    //   isProceed = false;
+    //   errorMsg += " Password";
+    // }
     if (!isProceed) {
       toast.warning(errorMsg);
     }
@@ -36,7 +41,13 @@ function Firstel() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let elementObj = { name, lastname, id, email, password };
+    let elementObj = {
+      name: nameRef.current.value,
+      lastname,
+      id,
+      email,
+      password,
+    };
     if (isValidate()) {
       console.log(elementObj);
       fetch("http://localhost:8000/user ", {
@@ -79,15 +90,19 @@ function Firstel() {
           </h1>
           <div className={FirstStyle.fillCont}>
             <label>Name</label>
+            {/* TODO: add ref to input to make it optimized  */}
             <input
+              ref={nameRef}
+              required
               className={FirstStyle.inputDesign}
-              value={name}
-              onChange={(e) => changeName(e.target.value)}
+              // value={name}
+              // onChange={(e) => changeName(e.target.value)}
             ></input>
           </div>
           <div className={FirstStyle.fillCont}>
             <label>LastName</label>
             <input
+              required
               className={FirstStyle.inputDesign}
               value={lastname}
               onChange={(e) => changeLastname(e.target.value)}
@@ -95,9 +110,10 @@ function Firstel() {
           </div>
           <div className={FirstStyle.fillCont}>
             <label>
-              Account name <span  className={FirstStyle.redStar}>*</span>
+              Account name <span className={FirstStyle.redStar}>*</span>
             </label>
             <input
+              required
               className={FirstStyle.inputDesign}
               value={id}
               onChange={(e) => changeId(e.target.value)}
@@ -108,6 +124,7 @@ function Firstel() {
               Password <span className={FirstStyle.redStar}>*</span>
             </label>
             <input
+              required
               type="password"
               className={FirstStyle.inputDesign}
               value={password}

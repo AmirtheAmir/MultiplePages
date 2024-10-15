@@ -1,22 +1,21 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ThirdStyle from "./Thirdel.module.css";
+
 function Thirdel() {
   const [weather, setWeather] = useState();
   const [city, setCity] = useState("New York");
   const [name, setName] = useState("");
   const [iconcode, seticon] = useState("10d");
 
-  const apiKey = "f38681fe0e8035e583073fd9c27bf85b";
-
   useEffect(() => {
     fetchWeather(city);
-  }, []);
+  }, [city]);
 
   const fetchWeather = async (cityName) => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
       );
       const data = await response.json();
       if (data.cod === 200) {
@@ -33,7 +32,6 @@ function Thirdel() {
     e.preventDefault();
     let iconcode = weather.weather[0].icon;
     if (name) {
-      fetchWeather(name);
       setCity(name);
       seticon(iconcode);
       setName("");
@@ -44,6 +42,7 @@ function Thirdel() {
       <h1 className={ThirdStyle.weatherTitle}>Weather Today</h1>
       <div className={ThirdStyle.resultCont}>
         <form onSubmit={handleSearch} className={ThirdStyle.searchBox}>
+          {/* TODO: you can use searchRef and remove onchagne */}
           <input
             type="text"
             value={name}
